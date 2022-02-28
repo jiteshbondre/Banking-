@@ -1,24 +1,38 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http'; 
+import { RouterModule } from '@angular/router';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { OpenAccountComponent } from './open-account/open-account.component';
+import { ProfileComponent } from './profile/profile.component';
+import { CalculationComponent } from './calculation/calculation.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HomeClientComponent } from './home-client/home-client.component';
+import { LoanDetailsComponent } from './loan-details/loan-details.component';
+import { ApplyLoanComponent } from './apply-loan/apply-loan.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeClientComponent
+    HomeComponent,
+    OpenAccountComponent,
+    ProfileComponent,
+    CalculationComponent,
+    LoanDetailsComponent,
+    ApplyLoanComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule
+    RouterModule,
+    FormsModule , 
+    ReactiveFormsModule  ,
+    HttpClientModule
   ],
   providers: [],
-  bootstrap: [HomeClientComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

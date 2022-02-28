@@ -1,0 +1,23 @@
+<section class="commonSection applyAmoutSec">
+    <div class="container" style="margin-top: 200px;">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h4 class="sec_title">Calculate Loan</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="applyamountFrom">
+                    <form [formGroup]="profileForm" (ngSubmit)="onClickSubmit()">
+                        <input type="number" step="any" formControlName="amt" placeholder="Amount">
+                        <input type="number" step="any" formControlName="months" placeholder="Long of months?">
+                        <input type="number" step="any" formControlName="installment" placeholder="Installment amount.">
+                        <button class="common_btn" type="submit">Calculate</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-7">
+            </div>
+        </div>
+    </div>
+  </section>

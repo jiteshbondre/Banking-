@@ -1,0 +1,30 @@
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <aside class="widget about_widgets">
+                    
+                </aside>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <aside class="widget subscribe_widgets">
+                    <h3>Account With LTI</h3>
+                    <div class="alert alert-success">
+                        <strong></strong> {{msg}}
+                      </div>
+                    <form [formGroup]="profileForm" (ngSubmit)="onClickSubmit()" >
+                        <input type="text" placeholder="First name" name="fname" formControlName = "fame"/>
+                        <input type="text" placeholder="Middle Name" formControlName="mname"/>
+                        <input type="text" placeholder="Last name" formControlName="lname"/>
+                        <input type="text" placeholder="pan Card no" formControlName="pan"/>
+                        <input type="text" placeholder="Adhar Card no" formControlName="adhar"/>
+                        <input type="email" placeholder="Email address" formControlName="email"/>
+                        <input type="text" placeholder="Phone no." formControlName="phone"/>
+                        <input type="submit" value="Request for Account">
+                    </form>
+                </aside>
+            </div>
+        </div>
+    </div>
+</footer>
