@@ -7,7 +7,7 @@
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <div class="applyamountFrom">
+                <div class="">
                     <table class="table table-striped">
                         <thead>
                           <tr>
@@ -46,8 +46,22 @@
                             <td>    ₹ 550/- per cheque bounce
                             </td>
                           </tr>
+
+                          <tr>
+                            <td>  Total Amout to be Paid
+  
+                            </td>
+                            <td>   {{total}}
+                            </td>
+                          </tr>
                         </tbody>
                       </table>
+                      <div *ngIf="login===true">
+                    <a routerLink="/loan"> <input type="submit" value="Apply"></a>
+                  </div>
+                  <div *ngIf="login===false">
+                    <a routerLink="/home"> <input type="submit" value="Apply"></a>
+                  </div>
                 </div>
             </div>
             <div class="col-lg-7">

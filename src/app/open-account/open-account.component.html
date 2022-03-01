@@ -10,17 +10,18 @@
             <div class="col-lg-4 col-md-6">
                 <aside class="widget subscribe_widgets">
                     <h3>Account With LTI</h3>
-                    <div class="alert alert-success">
-                        <strong></strong> {{msg}}
+                    <div class="alert alert-success" >
+                        <strong *ngIf="msg!=null"> {{msg}}</strong>
                       </div>
                     <form [formGroup]="profileForm" (ngSubmit)="onClickSubmit()" >
-                        <input type="text" placeholder="First name" name="fname" formControlName = "fame"/>
-                        <input type="text" placeholder="Middle Name" formControlName="mname"/>
-                        <input type="text" placeholder="Last name" formControlName="lname"/>
-                        <input type="text" placeholder="pan Card no" formControlName="pan"/>
-                        <input type="text" placeholder="Adhar Card no" formControlName="adhar"/>
-                        <input type="email" placeholder="Email address" formControlName="email"/>
-                        <input type="text" placeholder="Phone no." formControlName="phone"/>
+                        <input type="text" placeholder="First name" name="fname"  formControlName = "fname" required/>
+                        <input type="text" placeholder="Middle Name"  formControlName="mname" required/>
+                        <input type="text" placeholder="Last name" required formControlName="lname" required/>
+                        <input type="text" placeholder="pan Card no" required formControlName="pan"/>
+                        <input type="number" placeholder="Adhar Card no" required formControlName="adhar"/>
+                        <input type="email" placeholder="Email address" required formControlName="email"/>
+                        <input type="number" placeholder="Phone no." required formControlName="phone"/>
+                        <input type="password" placeholder="Password" required formControlName="Password"/>
                         <input type="submit" value="Request for Account">
                     </form>
                 </aside>

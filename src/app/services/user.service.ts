@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { user } from '../models/user';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -11,14 +11,14 @@ export class UserService {
 
   }
   getUsers() :any
-  {  console.log(this.httpSer.get<user[]>(this.baseUrl+"user"))
-    return this.httpSer.get<user[]>(this.baseUrl+"user");
+  {  console.log(this.httpSer.get<User[]>(this.baseUrl+"user"))
+    return this.httpSer.get<User[]>(this.baseUrl+"user");
 
   }
 
-  getUserById(user:user) :any
+  getUserById(user:User) :any
   { 
-    return this.httpSer.get<user>(this.baseUrl+"/user")
+    return this.httpSer.get<User>(this.baseUrl+"/user")
 
   }
 }

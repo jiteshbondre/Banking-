@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { RegisterService } from '../Services/register.service';
+import { User } from '../models/user';
+import { RegisterService } from '../services/register.service';
 
 @Component({
   selector: 'app-open-account',
@@ -12,23 +13,36 @@ export class OpenAccountComponent implements OnInit {
   constructor( private Ser:RegisterService) { }
   msg:string="";
   userName: any; 
+  users:User[]=[];
   ;
   profileForm = new FormGroup({
-    fame: new FormControl(''),
+    fname: new FormControl(''),
     mname: new FormControl(''),
     lname :new FormControl(''),
     pan: new FormControl(''),
     adhar: new FormControl(''),
     email :new FormControl(''),
-    phone :new FormControl('')
+    phone :new FormControl(''),
+    password :new FormControl('')
   });
 
   ngOnInit() { 
     
+    this.Ser.getUser().subscribe(
+      (      data: any)=>
+      {
+        this.users=data;
+        console.log("in dept-list  " +this.users[2].lname )
+      }  ) 
+    
   } 
   onClickSubmit() {
-    this.msg="Account Request send for approval"
-    console.log(this.profileForm)
-    this.Ser.addUser(this.profileForm.value)
+   
+    console.log(this.profileForm.value)
+
+    this.Ser.addUser(this.profileForm.value).subscribe(data => {
+      this.msg="Account is Created";
+      console.log("account request send");
+    });
     }
 }

@@ -673,7 +673,9 @@ Version: 1.0
     margin: 0 0 26px;
 }
 .footer .subscribe_widgets input[type="text"],
-.footer .subscribe_widgets input[type="email"]{
+.footer .subscribe_widgets input[type="email"],
+.footer .subscribe_widgets input[type="number"],
+.footer .subscribe_widgets input[type="Password"]{
     font-size: 19px;
     color: #929292;
     line-height: 55px;
@@ -687,17 +689,23 @@ Version: 1.0
     padding: 0 20px;
 }
 .footer .subscribe_widgets input[type="text"]::-moz-placeholder,
-.footer .subscribe_widgets input[type="email"]::-moz-placeholder{
+.footer .subscribe_widgets input[type="email"]::-moz-placeholder,
+.footer .subscribe_widgets input[type="number"]::-moz-placeholder,
+.footer .subscribe_widgets input[type="Password"]::-moz-placeholder{
     color: #929292;
     opacity: 1;
 }
 .footer .subscribe_widgets input[type="text"]::-webkit-input-placeholder,
-.footer .subscribe_widgets input[type="email"]::-webkit-input-placeholder{
+.footer .subscribe_widgets input[type="email"]::-webkit-input-placeholder,
+.footer .subscribe_widgets input[type="number"]::-webkit-input-placeholder,
+.footer .subscribe_widgets input[type="password"]::-webkit-input-placeholder{
     color: #929292;
     opacity: 1;
 }
 .footer .subscribe_widgets input[type="text"]::-ms-input-placeholder,
-.footer .subscribe_widgets input[type="email"]::-ms-input-placeholder{
+.footer .subscribe_widgets input[type="email"]::-ms-input-placeholder,
+.footer .subscribe_widgets input[type="number"]::-ms-input-placeholder,
+.footer .subscribe_widgets input[type="password"]::-ms-input-placeholder{
     color: #929292;
     opacity: 1;
 }
@@ -2915,7 +2923,9 @@ Version: 1.0
 }
 
 .footer_2 .subscribe_widgets input[type="text"], 
-.footer_2 .subscribe_widgets input[type="email"]{
+.footer_2 .subscribe_widgets input[type="email"],
+.footer_2 .subscribe_widgets input[type="number"], 
+.footer_2 .subscribe_widgets input[type="password"]{
     color: #606378;
     height: 60px;
     line-height: 60px;

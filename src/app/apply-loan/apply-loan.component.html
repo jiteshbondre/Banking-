@@ -9,8 +9,8 @@
             
             <div class="col-lg-4 col-md-6">
                 <aside class="widget subscribe_widgets">
-                    <h3>Account With LTI</h3>
-                    <div class="alert alert-success">
+                    <h3>Apply Loan</h3>
+                    <div class="alert alert-success" *ngif="msg!=null">
                         <strong></strong> {{msg}}
                       </div>
                     <form [formGroup]="profileForm" (ngSubmit)="onClickSubmit()" >
@@ -21,6 +21,9 @@
                         <input type="text" placeholder="Adhar Card no" formControlName="pan"/>
                         <input type="email" placeholder="Email address" formControlName="email"/>
                         <input type="text" placeholder="Phone no." formControlName="phone"/>
+                        <input type="number" placeholder="Requested Ammount" formControlName="amt"/>
+                        <input type="text" placeholder="Security" formControlName="amt"/>
+                        <input type="number" placeholder="Montly income" formControlName="amt"/>
                         <input type="submit" value="Request for Account">
                     </form>
                 </aside>

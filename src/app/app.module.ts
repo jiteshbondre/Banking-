@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoanDetailsComponent } from './loan-details/loan-details.component';
 import { ApplyLoanComponent } from './apply-loan/apply-loan.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProfileComponent,
     CalculationComponent,
     LoanDetailsComponent,
-    ApplyLoanComponent
+    ApplyLoanComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -10,8 +10,9 @@ export class ApplyLoanComponent implements OnInit {
 
  
   constructor() { }
-  msg:string="";
+  msg:string=null;
   userName: any; 
+  login:boolean=false;
   ;
   profileForm = new FormGroup({
     lname: new FormControl(''),
@@ -20,10 +21,16 @@ export class ApplyLoanComponent implements OnInit {
   });
 
   ngOnInit() { 
+    if(sessionStorage.getItem("userName")!=null)
+    {
+     this.login=true
+    }else{
+     this.login=false
+    }
     
   } 
   onClickSubmit() {
-    this.msg="Account Request send for approval"
+    this.msg="Loan Request send for approval"
     console.log(this.profileForm)
     }
 }
