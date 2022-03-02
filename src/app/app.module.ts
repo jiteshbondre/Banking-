@@ -13,6 +13,7 @@ import { LoanDetailsComponent } from './loan-details/loan-details.component';
 import { ApplyLoanComponent } from './apply-loan/apply-loan.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { LoginComponent } from './login/login.component';
     CalculationComponent,
     LoanDetailsComponent,
     ApplyLoanComponent,
-    LoginComponent
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

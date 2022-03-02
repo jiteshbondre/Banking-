@@ -9,14 +9,17 @@
   
                 <h2 class="text-white-50 fw-bold mb-2 text-uppercase" color="white">Login</h2>
                 <p class="text-white-50 mb-5">Please enter your Account Number and password!</p>
-  
+                <div class="alert alert-danger" role="alert" *ngIf="loginflag==true">
+                  Invalid Credentials!
+                </div>
+                <form [formGroup]="loginForm" (ngSubmit)="onClickSubmit()">
                 <div class="form-outline form-white mb-4">
-                  <input type="number" id="typeEmailX" class="form-control form-control-lg" />
+                  <input type="number" id="typeEmailX" class="form-control form-control-lg" formControlName = "accountNo" />
                   <label class="form-label" for="typeEmailX">Account Number</label>
                 </div>
   
                 <div class="form-outline form-white mb-4">
-                  <input type="password" id="typePasswordX" class="form-control form-control-lg" />
+                  <input type="password" id="typePasswordX" class="form-control form-control-lg" formControlName = "password" />
                   <label class="form-label" for="typePasswordX">Password</label>
                 </div>
   
@@ -25,7 +28,7 @@
                 <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
   
                 
-  
+              </form>
               </div>
   
               <div>

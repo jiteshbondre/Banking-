@@ -7,23 +7,24 @@ import { Router, RouterLink, RouterModule } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-
+  username:string=""
   login:boolean=true;
   
   constructor(private router:Router)
   {
-    
     if(sessionStorage.getItem("userName")!=null)
     {
      this.login=true
+     this.username=sessionStorage.getItem("userName");
     }else{
      this.login=false
     }
+    console.log("this.login="+this.login)
 
-    console.log(this.login)
+   
   }
   ngOnInit(): void {
-    this.router.navigate(['/home']);
+  
   }
   }
 

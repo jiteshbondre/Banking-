@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { login } from '../models/login';
 import { User } from '../models/user';
 
 @Injectable({
@@ -20,14 +21,15 @@ ngOnInit()
   
 public addUser(user:User) : Observable<any>
 {
-  console.log(this.httpSer.post(this.baseUrl+"add", user));
-  return this.httpSer.post("http://localhost:8088/add", user);
+  console.log(this.httpSer.post(this.baseUrl+"reg", user));
+  return this.httpSer.post<User>("http://localhost:8087/Reg", user);
   
 }
-public getUser() : any
+public loginUser(user:login) : any
 { 
   //console.log(this.httpSer.post(this.baseUrl));
-  return this.httpSer.get<User[]>(this.baseUrl+"get");
+  //this.httpSer.request<User>  ('GET',this.baseUrl+"get", {responseType:'json'});
+  return this.httpSer.post<User>("http://localhost:8087/login",user);;
 }
 
 public getUserByID(userID:Number): any

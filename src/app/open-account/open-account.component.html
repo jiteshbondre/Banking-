@@ -14,14 +14,14 @@
                         <strong *ngIf="msg!=null"> {{msg}}</strong>
                       </div>
                     <form [formGroup]="profileForm" (ngSubmit)="onClickSubmit()" >
-                        <input type="text" placeholder="First name" name="fname"  formControlName = "fname" required/>
-                        <input type="text" placeholder="Middle Name"  formControlName="mname" required/>
-                        <input type="text" placeholder="Last name" required formControlName="lname" required/>
-                        <input type="text" placeholder="pan Card no" required formControlName="pan"/>
-                        <input type="number" placeholder="Adhar Card no" required formControlName="adhar"/>
-                        <input type="email" placeholder="Email address" required formControlName="email"/>
+                        <input type="text" placeholder="First name" name="fname"  formControlName = "firstName" required/>
+                        <input type="text" placeholder="Last Name"  formControlName="lastName" required/>
+                        <input type="text" placeholder="Address" required formControlName="address" required/>
+                        <input type="text" placeholder="pan Card no" required formControlName="panNo"/>
+                        <input type="number" placeholder="Adhar Card no" required formControlName="aadharNo"/>
+                        <input type="email" placeholder="Email address" required formControlName="mailId"/>
                         <input type="number" placeholder="Phone no." required formControlName="phone"/>
-                        <input type="password" placeholder="Password" required formControlName="Password"/>
+                        <input type="password" placeholder="Password" required formControlName="password"/>
                         <input type="submit" value="Request for Account">
                     </form>
                 </aside>

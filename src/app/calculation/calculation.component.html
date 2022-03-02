@@ -9,6 +9,13 @@
             <div class="col-sm-12">
                 <div class="applyamountFrom">
                     <form [formGroup]="profileForm" (ngSubmit)="onClickSubmit()">
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" formControlName="loanType">
+                            <option value="" disabled selected hidden>Select Loan Type</option>
+                            <option value="house">House Loan</option>
+                            <option value="car">Car Loan</option>
+                            <option value="personal">Personal Loan</option>
+                            <option value="personal">Education Loan</option>
+                          </select>
                         <input type="number" step="any" formControlName="amt" placeholder="Amount">
                         <input type="number" step="any" formControlName="months" placeholder="Long of months?">
                         <input type="number" step="any" formControlName="installment" placeholder="Installment amount.">

@@ -13,27 +13,25 @@ export class OpenAccountComponent implements OnInit {
   constructor( private Ser:RegisterService) { }
   msg:string="";
   userName: any; 
-  users:User[]=[];
+  users:User;
   ;
   profileForm = new FormGroup({
-    fname: new FormControl(''),
-    mname: new FormControl(''),
-    lname :new FormControl(''),
-    pan: new FormControl(''),
-    adhar: new FormControl(''),
-    email :new FormControl(''),
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+    address :new FormControl(''),
+    mailId: new FormControl(''),
+    aadharNo: new FormControl(''),
+    panNo :new FormControl(''),
     phone :new FormControl(''),
-    password :new FormControl('')
+    password :new FormControl(''),
+    approvalStatus: new FormControl(''),
+    balance :new FormControl(''),
+    branchId :new FormControl('')
   });
 
   ngOnInit() { 
     
-    this.Ser.getUser().subscribe(
-      (      data: any)=>
-      {
-        this.users=data;
-        console.log("in dept-list  " +this.users[2].lname )
-      }  ) 
+   
     
   } 
   onClickSubmit() {
@@ -42,7 +40,7 @@ export class OpenAccountComponent implements OnInit {
 
     this.Ser.addUser(this.profileForm.value).subscribe(data => {
       this.msg="Account is Created";
-      console.log("account request send");
+      console.log(data);
     });
     }
 }

@@ -16,7 +16,8 @@ export class CalculationComponent implements OnInit {
   profileForm = new FormGroup({
     amt: new FormControl(''),
     months: new FormControl(''),
-    installment :new FormControl('')
+    installment :new FormControl(''),
+    loanType :new FormControl('')
   });
   constructor(private route:Router) { }
 
@@ -24,7 +25,7 @@ export class CalculationComponent implements OnInit {
  } 
  onClickSubmit() {
    console.log(this.profileForm.value)
-   this.route.navigate(['cald',this.profileForm.value.amt,this.profileForm.value.months,this.profileForm.value.installment]);
+   this.route.navigate(['cald',this.profileForm.value.amt,this.profileForm.value.months,this.profileForm.value.installment,this.profileForm.value.loanType]);
  }
 }
 
