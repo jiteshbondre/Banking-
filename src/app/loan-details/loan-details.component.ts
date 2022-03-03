@@ -12,7 +12,7 @@ export class LoanDetailsComponent implements OnInit {
   months:string="";
   interest:number=0;
 
-  installment:string="";
+  installment:number=0;
   login:boolean=false;
 
   constructor(private route: ActivatedRoute) {}
@@ -42,7 +42,9 @@ export class LoanDetailsComponent implements OnInit {
    console.log(this.login)
      console.log(this.route.snapshot.params['amt'])
      //console.log(this.route.snapshot.params[2])
+     this.total=((this.route.snapshot.params['month']*this.interest)*Number(this.route.snapshot.params['amt']))+200
+     this.installment=this.total/this.route.snapshot.params['month'];
+     this.months=this.route.snapshot.params['month'];
 
-     this.total=Number(this.route.snapshot.params['month'])*this.interest*Number(this.route.snapshot.params['inst'])+200
   }
 }

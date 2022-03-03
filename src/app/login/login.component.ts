@@ -44,6 +44,8 @@ export class LoginComponent implements OnInit {
       }
       else{
         sessionStorage.setItem("userName",this.users.firstName);
+        //sessionStorage.setItem("accNo",this.users.accountNo);
+
         this.loginflag=false;
         this.route.navigate(['home']);
 

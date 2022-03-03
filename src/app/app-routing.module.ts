@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { OpenAccountComponent } from './open-account/open-account.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ShowTransactionComponent } from './show-transaction/show-transaction.component';
 
 const routes: Routes = [{path:"account",component:OpenAccountComponent},
 {path:"profile",component:ProfileComponent}
@@ -16,7 +17,9 @@ const routes: Routes = [{path:"account",component:OpenAccountComponent},
 {path:"loan",component:ApplyLoanComponent},
 {path:"login",component:LoginComponent},
 {path:"logout",component:LogoutComponent},
-{path:"cald/:amt/:month/:inst/:loanType",component:LoanDetailsComponent}
+{path:"tran",component:ShowTransactionComponent},
+
+{path:"cald/:amt/:month/:loanType",component:LoanDetailsComponent}
 ];
 
 @NgModule({

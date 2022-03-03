@@ -46,7 +46,21 @@
                             <td>    ₹ 550/- per cheque bounce
                             </td>
                           </tr>
-
+                          <tr>
+                            <td> number of installments
+  
+                            </td>
+                            <td>   {{months}}
+                            </td>
+                          </tr>
+                          <tr>
+                          <tr>
+                            <td>  installment per Month
+  
+                            </td>
+                            <td>   {{installment}}
+                            </td>
+                          </tr>
                           <tr>
                             <td>  Total Amout to be Paid
   
@@ -60,7 +74,7 @@
                     <a routerLink="/loan"> <input type="submit" value="Apply"></a>
                   </div>
                   <div *ngIf="login===false">
-                    <a routerLink="/home"> <input type="submit" value="Apply"></a>
+                    <a routerLink="/login"> <input type="submit" value="Apply"></a>
                   </div>
                 </div>
             </div>

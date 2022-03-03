@@ -32,6 +32,13 @@ public loginUser(user:login) : any
   return this.httpSer.post<User>("http://localhost:8087/login",user);;
 }
 
+public getProfile(acc:number) : any
+{ 
+  //console.log(this.httpSer.post(this.baseUrl));
+  //this.httpSer.request<User>  ('GET',this.baseUrl+"get", {responseType:'json'});
+  return this.httpSer.post<User>("http://localhost:8087/login",acc);;
+}
+
 public getUserByID(userID:Number): any
 {
   return this.httpSer.get<User>(this.baseUrl+"get/"+{userID});

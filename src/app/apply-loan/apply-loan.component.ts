@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { RegisterService } from '../services/register.service';
 
 @Component({
   selector: 'app-apply-loan',
@@ -9,7 +10,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class ApplyLoanComponent implements OnInit {
 
  
-  constructor() { }
+  constructor(private Ser:RegisterService) { }
   msg:string=null;
   userName: any; 
   login:boolean=false;
@@ -28,6 +29,13 @@ export class ApplyLoanComponent implements OnInit {
      this.login=false
     }
     
+    // this.Ser.getProfile(this.loginForm.value).subscribe(
+    //   (      data: any)=>
+    //   {
+    //     this.users=data;
+    //     console.log("in dept-list  " +this.users.firstName )
+    //   }  ) 
+
   } 
   onClickSubmit() {
     this.msg="Loan Request send for approval"

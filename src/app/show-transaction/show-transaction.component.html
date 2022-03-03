@@ -1,0 +1,51 @@
+<section class="commonSection applyAmoutSec">
+    <div class="container" style="margin-top: 200px;">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h4 class="">Last Transactions</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="">
+                    <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th>transactionId</th>
+                            <th>Amount
+                            </th>
+                            <th>Date OF Transaction</th>
+                            <th>Type 
+                            </th>
+                            <th>Card ID</th>
+                            
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let tran of transaction;">
+                            <td>  {{tran.transactionId}}
+                            </td>
+                            <td> {{tran.amount}}
+                            </td>
+                            <td>  {{tran.transactionDate}}
+                            </td>
+                            <td> {{tran.transactionType}}
+                            </td>
+                            <td>  {{tran.cardId}}
+                            </td>
+                           
+                          </tr>
+                                                 </tbody>
+                      </table>     
+                      <div *ngIf="login===true">
+                    <a routerLink="#"> <input type="submit" value="download "></a>
+                  </div>
+                  
+                </div>
+            </div>
+            <div class="col-lg-7">
+            </div>
+        </div>
+    </div>
+  </section>
+ 

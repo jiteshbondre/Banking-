@@ -10,6 +10,7 @@ password:string="";
 approvalStatus:string="";
 balance:number=0;
 branchId:number=0;
+accountNo:number;
 
 
 // constructor(fname:string,mname:string,lname:string,email:string,adhar:string,pan:string,phone:string,password:string)

@@ -14,6 +14,7 @@ import { ApplyLoanComponent } from './apply-loan/apply-loan.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+import { ShowTransactionComponent } from './show-transaction/show-transaction.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { LogoutComponent } from './logout/logout.component';
     LoanDetailsComponent,
     ApplyLoanComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    ShowTransactionComponent
   ],
   imports: [
     BrowserModule,

@@ -39,7 +39,8 @@ export class OpenAccountComponent implements OnInit {
     console.log(this.profileForm.value)
 
     this.Ser.addUser(this.profileForm.value).subscribe(data => {
-      this.msg="Account is Created";
+      this.users=data
+      this.msg="Account is Created with account No "+this.users.accountNo;
       console.log(data);
     });
     }
