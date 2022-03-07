@@ -21,4 +21,6 @@ export class UserService {
     return this.httpSer.get<User>(this.baseUrl+"/user")
 
   }
+
+
 }

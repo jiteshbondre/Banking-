@@ -1,3 +1,85 @@
+  <!-- Preloading -->
+  
+<!-- Preloading -->
+<!-- Header section -->
+<header class="header_1" id="header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-3 col-md-3">
+                <div class="logo">
+                    <a href="index.html"><img src="./assets/images/bankLogo.PNG" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9">
+                <nav class="mainmenu MenuInRight text-right">
+                    <a href="" class="mobilemenu d-md-none d-lg-none d-xl-none">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                    <ul>
+                        <li class="menu-item-has-children">
+                            <a href="/home">home</a>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="#">Services</a>
+                            <ul class="sub-menu">
+                              <li><a routerLink="cal">Loan Calculation</a></li>
+                                <li><a href="/home">Bank Details</a></li>
+                                 <li *ngIf="login===true" ><a routerLink="/tran">Last Transactions</a></li>
+                            </ul>
+                        </li>
+                            <li *ngIf="login===false"><a routerLink="/login">Login</a></li>
+                        
+
+                        <li >
+                                <div class="navigator_btn btn_bg text-right"  *ngIf="login===false" >
+                                    <a class="common_btn" routerLink="/account">Open account   </a>
+                                </div>
+                                <div class="navigator_btn btn_bg text-right" *ngIf="login===true" >
+                                  <a class="common_btn menu-item-has-children"  href="#"> Welcome {{username}} </a>
+                                  <ul class="sub-menu" style="text-align: center;">
+                                    <li><a routerLink="/profile">profile</a></li>
+                                      <li><a routerLink="/logout">logout</a></li>
+                                       <!-- <li><a data-target="#exampleModal" data-whatever="@mdo">Forget Password</a></li> -->
+                                  </ul>
+                              
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Forget Password</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="form-group">
+                          <label for="recipient-name" class="col-form-label">Account No:</label>
+                          <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                          <label for="message-text" class="col-form-label">email ID:</label>
+                          <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Submit</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</header>
 <footer class="footer">
     <div class="container">
         <div class="row">
@@ -10,21 +92,24 @@
             <div class="col-lg-4 col-md-6">
                 <aside class="widget subscribe_widgets">
                     <h3>Apply Loan</h3>
-                    <div class="alert alert-success" *ngif="msg!=null">
+                    <div class="alert alert-success" >
                         <strong></strong> {{msg}}
                       </div>
                     <form [formGroup]="profileForm" (ngSubmit)="onClickSubmit()" >
-                        <input type="text" placeholder="First name" name="fname" formControlName = "fame"/>
-                        <input type="text" placeholder="Middle Name" formControlName="mname"/>
-                        <input type="text" placeholder="Last name" formControlName="lname"/>
-                        <input type="text" placeholder="pan Card no" formControlName="pan"/>
-                        <input type="text" placeholder="Adhar Card no" formControlName="pan"/>
-                        <input type="email" placeholder="Email address" formControlName="email"/>
-                        <input type="text" placeholder="Phone no." formControlName="phone"/>
-                        <input type="number" placeholder="Requested Ammount" formControlName="amt"/>
-                        <input type="text" placeholder="Security" formControlName="amt"/>
-                        <input type="number" placeholder="Montly income" formControlName="amt"/>
-                        <input type="submit" value="Request for Account">
+                        <input type = "text" value = {{user.firstName}} readonly="readonly">
+                        <input type = "text" value = {{user.lastName}} readonly="readonly">
+
+                      <input type = "text" value = {{user.accountNo}} readonly="readonly" formControlName="user">
+                      <input type = "text" value = {{user.panNo}} readonly= readonly>
+                      <input type = "text" value = {{user.aadharNo}} readonly= readonly>
+                        <input type = "text" value = {{user.mailId}} readonly= readonly>
+                        <input type = "text" value = {{user.phone}} readonly= "readonly">
+                        <input type = "text" value = {{loanType}} readonly= readonly>
+                        <input type = "text" value = {{amt}} formControlName="amountRequested"   name = "amountRequested" class = "form-control" id="amountRequested">
+                        <div>Surity Documents</div>
+                       <input type = "file"  formControlName="surity" placeholder="Surity" name = "surity" class = "form-control" id="surity"/>
+                       <input type = "text"  formControlName="monthlyIncome" placeholder="monthlyIncome"  name = "monthlyIncome" class = "form-control" id="monthlyIncome">
+                       <button class="btn btn-success">Request for Loan</button>
                     </form>
                 </aside>
             </div>

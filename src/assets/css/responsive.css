@@ -890,7 +890,7 @@ License URI:
         padding-left: 15px;
         padding-right: 15px;
     }
-    .applicationForm input[type="text"], .applicationForm input[type="number"], .applicationForm input[type="email"]{
+    .applicationForm input[type="text"], .applicationForm input[type="file"],.applicationForm input[type="number"], .applicationForm input[type="email"]{
         font-size: 16px;
     }
     .calculationThumb{
@@ -1130,7 +1130,7 @@ License URI:
         padding-right: 15px;
     }
     .caclculationFrom input[type="number"],
-    .applicationForm input[type="text"], .applicationForm input[type="number"], .applicationForm input[type="email"]{
+    .applicationForm input[type="text"],.applicationForm input[type="file"], .applicationForm input[type="number"], .applicationForm input[type="email"]{
         font-size: 17px;
     }
     .calculationThumb img {

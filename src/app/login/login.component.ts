@@ -11,8 +11,17 @@ import { RegisterService } from '../services/register.service';
 })
 export class LoginComponent implements OnInit {
   loginflag:boolean;
- 
-  constructor( private Ser:RegisterService,private route:Router) { }
+  username:string=""
+  login:boolean=true;
+  constructor( private Ser:RegisterService,private route:Router) {
+    if(sessionStorage.getItem("userName")!=null)
+    {
+     this.login=true
+     this.username=sessionStorage.getItem("userName");
+    }else{
+     this.login=false
+    }
+   }
   msg:string="";
   userName: any; 
   users:User;
@@ -44,7 +53,7 @@ export class LoginComponent implements OnInit {
       }
       else{
         sessionStorage.setItem("userName",this.users.firstName);
-        //sessionStorage.setItem("accNo",this.users.accountNo);
+       sessionStorage.setItem("accNo",this.users.accountNo.toString());
 
         this.loginflag=false;
         this.route.navigate(['home']);

@@ -1,9 +1,88 @@
-<section class="vh-100 gradient-custom" style="margin-top: 10%; ">
-    <div class="container" >
+<header class="header_1" id="header">
+  <div class="container">
+      <div class="row align-items-center">
+          <div class="col-lg-3 col-md-3">
+              <div class="logo">
+                  <a href="index.html"><img src="./assets/images/bankLogo.PNG" alt=""></a>
+              </div>
+          </div>
+          <div class="col-lg-9 col-md-9">
+              <nav class="mainmenu MenuInRight text-right">
+                  <a href="" class="mobilemenu d-md-none d-lg-none d-xl-none">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                  </a>
+                  <ul>
+                      <li class="menu-item-has-children">
+                          <a href="/home">home</a>
+                      </li>
+                      <li class="menu-item-has-children">
+                          <a href="#">Services</a>
+                          <ul class="sub-menu">
+                            <li><a routerLink="/cal">Loan Calculation</a></li>
+                              <li><a href="/home">Bank Details</a></li>
+                               <li *ngIf="login===true" ><a routerLink="/tran">Last Transactions</a></li>
+                          </ul>
+                      </li>
+                          <li *ngIf="login===false"><a routerLink="/login">Login</a></li>
+                      
+
+                      <li >
+                              <div class="navigator_btn btn_bg text-right"  *ngIf="login===false" >
+                                  <a class="common_btn" routerLink="/account">Open account   </a>
+                              </div>
+                              <div class="navigator_btn btn_bg text-right" *ngIf="login===true" >
+                                <a class="common_btn menu-item-has-children"  href="#"> Welcome {{username}} </a>
+                                <ul class="sub-menu" style="text-align: center;">
+                                  <li><a routerLink="/profile">profile</a></li>
+                                    <li><a routerLink="/logout">logout</a></li>
+                                     <!-- <li><a data-target="#exampleModal" data-whatever="@mdo">Forget Password</a></li> -->
+                                </ul>
+                            
+                          </div>
+                      </li>
+                  </ul>
+              </nav>
+          </div>
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Forget Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Account No:</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                      </div>
+                      <div class="form-group">
+                        <label for="message-text" class="col-form-label">email ID:</label>
+                        <input type="text" class="form-control" id="recipient-name">
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+  </div>
+</header>
+
+<section class="vh-100 gradient-custom" style="margin-top: 10%; background-color:#656d8800;">   
+   <div class="container" >
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-          <div class="card  text-black" style="border-radius: 1rem; background-color:#8180e0;">
-            <div class="card-body  text-center">
+          <div class="card bg-secondary text-white" style="border-radius: 1rem;">
+                        <div class="card-body  text-center">
   
               <div class="mb-md-5 mt-md-4">
   
@@ -21,7 +100,6 @@
                   <label class="form-label" for="typePasswordX">Password</label>
                 </div>
   
-                <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
   
                 <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
                 <div class="alert alert-danger" role="alert" *ngIf="loginflag==true" style="margin-top: 10px;">
@@ -36,6 +114,37 @@
               </div>
   
             </div>
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Forget Password</button>
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Forget Password</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Account No:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">email ID:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Click here</button>
+      </div>
+    </div>
+  </div>
+</div>
           </div>
         </div>
       </div>

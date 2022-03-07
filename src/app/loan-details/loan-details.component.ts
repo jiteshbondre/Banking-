@@ -11,15 +11,24 @@ export class LoanDetailsComponent implements OnInit {
   amt:string="";
   months:string="";
   interest:number=0;
-
+loanType:string;
   installment:number=0;
   login:boolean=false;
-
-  constructor(private route: ActivatedRoute) {}
+  username:string=""
+  constructor(private route: ActivatedRoute) {
+    if(sessionStorage.getItem("userName")!=null)
+    {
+     this.login=true
+     this.username=sessionStorage.getItem("userName");
+    }else{
+     this.login=false
+    }
+  }
   ngOnInit(): void {
     if(sessionStorage.getItem("userName")!=null)
     {
      this.login=true
+     this.loanType=this.route.snapshot.params['loanType'];
      
     }else{
      this.login=false
@@ -42,9 +51,14 @@ export class LoanDetailsComponent implements OnInit {
    console.log(this.login)
      console.log(this.route.snapshot.params['amt'])
      //console.log(this.route.snapshot.params[2])
-     this.total=((this.route.snapshot.params['month']*this.interest)*Number(this.route.snapshot.params['amt']))+200
-     this.installment=this.total/this.route.snapshot.params['month'];
+     this.total=this.route.snapshot.params['amt']
+     this.installment=this.route.snapshot.params['inst'];
      this.months=this.route.snapshot.params['month'];
 
+  }
+
+  public send()
+  {
+    console.log("sdkscsdfsdfsdfsd")
   }
 }

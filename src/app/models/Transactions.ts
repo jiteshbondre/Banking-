@@ -7,6 +7,7 @@ export class Transaction
     transactionDate:Data;
     transactionType:string;
     amount:number
+    accountNo:number
 
 
 }

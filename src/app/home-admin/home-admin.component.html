@@ -1,0 +1,191 @@
+<div class="login" *ngIf="loginflag==false">
+
+<section class="vh-100 gradient-custom" style="margin-top: 10%; background-color:#656d8800;">   
+    <div class="container" >
+       <div class="row d-flex justify-content-center align-items-center h-100">
+         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+           <div class="card bg-secondary text-white" style="border-radius: 1rem;">
+                         <div class="card-body  text-center">
+   
+               <div class="mb-md-5 mt-md-4">
+   
+                 <h2 class="text-white-0 fw-bold mb-2 text-uppercase" color=#fff> Admin Login</h2>
+                 <p class="text-white-0 mb-5">Please enter your username and password!</p>
+                
+                 <form [formGroup]="loginForm" (ngSubmit)="onClickSubmit()">
+                 <div class="form-outline form-white mb-4">
+                   <input type="text" id="typeEmailX" class="form-control form-control-lg" formControlName = "accountNo" />
+                   <label class="form-label" for="typeEmailX">Username</label>
+                 </div>
+   
+                 <div class="form-outline form-white mb-4">
+                   <input type="password" id="typePasswordX" class="form-control form-control-lg" formControlName = "password" />
+                   <label class="form-label" for="typePasswordX">Password</label>
+                 </div>
+   
+   
+                 <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+                 <div class="alert alert-danger" role="alert" *ngIf="loginflag1==true" style="margin-top: 10px;">
+                   Invalid Credentials!
+                 </div>
+                 
+               </form>
+               </div>
+   
+
+             </div>
+ 
+             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Forget Password</button>
+ 
+             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   
+ </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+
+
+<div class="main"  *ngIf="loginflag==true">
+<div class="row" >
+    <div class="col-lg-12 text-center">
+        <h4 class="sec_title">Admin Panel</h4>
+    </div>
+</div>
+                 <div class="row" style="margin: 1%;">
+                    <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12" >
+
+                       <form (ngSubmit)="onClickloan()">
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body">Pending Loan</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <button type="submit"  class=" btn btn-primary small text-white stretched-link" >View List</button>
+                                        <div class="small text-white">Total Count : {{loans.length}}</div>
+                                    </div>
+                                </div>                          
+                        </form>
+                    </div>
+                    <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+
+                        <form (ngSubmit)="onClicktran()">
+                                <div class="card bg-info text-white mb-4">
+                                    <div class="card-body">Last Month Transactions</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <button type="submit" class=" btn btn-info small text-white stretched-link" >View List</button>
+                                        <div class="small text-white">Total Count : {{transactions.length}}</div>
+                                    </div>
+                                </div>
+                           
+                            </form>
+                        </div>
+                        <div class="col-lg-4 col-xl-4 col-md-6 col-sm-12">
+
+                            <form (ngSubmit)="onClickuser()">
+                                <div class="card bg-success text-white mb-4">
+                                    <div class="card-body">Users</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <button type="submit" class=" btn btn-success small text-white stretched-link" >View List</button>
+                                        <div class="small text-white">Total Count :{{users.length}}</div>
+                                    </div>
+                                </div>
+                          
+                            </form>
+                        </div>
+                            <br>
+                            <br>
+                            <table class="table table-striped" id="tran" *ngIf="showtran==true">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Account No</th>
+                                    <th scope="col">Transaction Amount</th>
+                                    <th scope="col">Transaction date</th>
+                                    <th scope="col">Transaction type</th>
+                                    <th scope="col">Transaction card No</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let tran of transactions;">
+                                        <td>  {{tran.accountNo}}
+                                        </td>
+                                        <td> {{tran.amount}}
+                                        </td>
+                                        <td>  {{tran.transactionDate}}
+                                        </td>
+                                        <td> {{tran.transactionType}}
+                                        </td>
+                                        <td>  {{tran.cardId}}
+                                        </td>
+                                       
+                                      </tr>
+                                       
+                                                 </tbody>
+                              </table>
+                              <br>
+                              <br>
+                              <table class="table table-striped" id="tran" *ngIf="showloan==true">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Account No</th>
+                                    <th scope="col">Loan ID</th>
+                                    <th scope="col">Loan Type</th>
+                                    <th scope="col">Loan Status</th>
+                                    <th scope="col">Loan surity</th>
+                                    <th scope="col">Loan Amount</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let tran of loans;">
+                                        <td>  {{tran.userAccountNO}}
+                                        </td>
+                                        <td> {{tran.loanAppID}}
+                                        </td>
+                                        <td>  {{tran.loanType}}
+                                        </td>
+                                        <td>  {{tran.status}}
+                                        </td>
+                                        <td> {{tran.surity}}
+                                        </td>
+                                        <td>  {{tran.ammountIssue}}
+                                        </td>
+                                       
+                                      </tr>
+                                       
+                                                 </tbody>
+                              </table>
+                              <br>
+                              <br>
+                           
+                              <table class="table table-striped" id="user" *ngIf="showuser==true">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Account No</th>
+                                    <th scope="col">first Name</th>
+                                    <th scope="col">Last Name</th>
+                                    <th scope="col">mail ID</th>
+                                    <th scope="col">Pan Card</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let tran of users;">
+                                        <td>  {{tran.accountNo}}
+                                        </td>
+                                        <td> {{tran.firstName}}
+                                        </td>
+                                        <td>  {{tran.lastName}}
+                                        </td>
+                                        <td> {{tran.mailId}}
+                                        </td>
+                                        <td>  {{tran.panNo}}
+                                        </td>
+                                       
+                                      </tr>
+                                       
+                                                 </tbody>
+                              </table>
+
+                              
+                        </div>
+                    </div>

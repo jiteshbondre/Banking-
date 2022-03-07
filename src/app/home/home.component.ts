@@ -7,8 +7,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor(private route:Router) { }
+  username:string=""
+  login:boolean=true;
+  constructor(private route:Router) { if(sessionStorage.getItem("userName")!=null)
+  {
+   this.login=true
+   this.username=sessionStorage.getItem("userName");
+  }else{
+   this.login=false
+  } }
 
   ngOnInit(): void {
   }

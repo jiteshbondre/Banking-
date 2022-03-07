@@ -25,4 +25,10 @@ public getTransaction(user:User) : Observable<any>
   
 }
 
+getAllTransaction() :any
+{ 
+  return this.httpSer.get<Transaction[]>("http://localhost:8087/allUser");
+
+}
+
 }

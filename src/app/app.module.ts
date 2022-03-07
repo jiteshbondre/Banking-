@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { ShowTransactionComponent } from './show-transaction/show-transaction.component';
+import { HomeAdminComponent } from './home-admin/home-admin.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ShowTransactionComponent } from './show-transaction/show-transaction.co
     ApplyLoanComponent,
     LoginComponent,
     LogoutComponent,
-    ShowTransactionComponent
+    ShowTransactionComponent,
+    HomeAdminComponent
   ],
   imports: [
     BrowserModule,

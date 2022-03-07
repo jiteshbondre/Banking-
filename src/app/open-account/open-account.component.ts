@@ -9,8 +9,17 @@ import { RegisterService } from '../services/register.service';
   styleUrls: ['./open-account.component.css']
 })
 export class OpenAccountComponent implements OnInit {
-
-  constructor( private Ser:RegisterService) { }
+  username:string=""
+  login:boolean=true;
+  constructor( private Ser:RegisterService) { 
+    if(sessionStorage.getItem("userName")!=null)
+    {
+     this.login=true
+     this.username=sessionStorage.getItem("userName");
+    }else{
+     this.login=false
+    }
+  }
   msg:string="";
   userName: any; 
   users:User;
